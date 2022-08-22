@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Hexo</title>
+        <meta name="author" content="John Doe">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="icon" href="">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 6.2.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Hexo</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Hexo</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1> </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/8/22
+        </span>
+        
+        
+    </div>
+    <div class="content" v-pre>
+        <p><strong>判断是否为符合规则的括号：</strong></p>
+<p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<p>左括号必须用相同类型的右括号闭合。<br>左括号必须以正确的顺序闭合。	</p>
+<p>这里主要用了字典和栈的定义，这里的栈不能是空的，因为判断右括号的时候，如果第一个就是又括号的话会报错。这里是判断是不是左括号，如果不是的话，则弹出之前储存的左括号进行判断，成对的话即走下一轮。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isValid</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">       <span class="comment">#设计一个字典，该字典能够让符号相对于</span></span><br><span class="line">       dic = &#123;<span class="string">&#x27;&#123;&#x27;</span>: <span class="string">&#x27;&#125;&#x27;</span>,  <span class="string">&#x27;[&#x27;</span>: <span class="string">&#x27;]&#x27;</span>, <span class="string">&#x27;(&#x27;</span>: <span class="string">&#x27;)&#x27;</span>, <span class="string">&#x27;?&#x27;</span>: <span class="string">&#x27;?&#x27;</span>&#125;</span><br><span class="line">      <span class="comment">#非空的栈能够让单独的&#125;得以判断</span></span><br><span class="line">       staff = [<span class="string">&#x27;?&#x27;</span>]</span><br><span class="line">      <span class="comment">#遍历</span></span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">        <span class="comment">#假如i在字典里面，即左括号</span></span><br><span class="line">           <span class="keyword">if</span> i <span class="keyword">in</span> dic:</span><br><span class="line">            <span class="comment">#push进栈</span></span><br><span class="line">               staff.append(i)</span><br><span class="line">           <span class="keyword">elif</span> dic[staff.pop()] != i: </span><br><span class="line">               <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">len</span>(staff) == <span class="number">1</span></span><br><span class="line"><span class="comment">#if len(staff) == 1:</span></span><br><span class="line"><span class="comment">#return True 会让程序出现返回Null的情况</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。</strong></p>
+<p>实现 MinStack 类，包含以下内容：</p>
+<p>MinStack() 初始化堆栈对象。<br>void push(int val) 将元素val推入堆栈。<br>void pop() 删除堆栈顶部的元素。<br>int top() 获取堆栈顶部的元素。<br>int getMin() 获取堆栈中的最小元素。</p>
+<p>这个很容易理解，只要多设计一条栈用来储存最小值即可，如果最小值被推出，则第二小的值会顶替上去。其他没什么难度。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>:</span><br><span class="line">	<span class="comment">#初始化栈和最小栈</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.stack = []</span><br><span class="line">        self.min_stack = []</span><br><span class="line">	<span class="comment">#推入栈函数，栈直接推入而最小栈需要判断</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, val: <span class="built_in">int</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self.stack.append(val)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.min_stack <span class="keyword">or</span> val &lt;= self.min_stack[-<span class="number">1</span>]: </span><br><span class="line">            self.min_stack.append(val)</span><br><span class="line">	<span class="comment">#推出的话比较麻烦，假如推出的值跟最小栈的栈顶相等的话，则都需要推出</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">if</span> self.stack.pop() == self.min_stack[-<span class="number">1</span>]:</span><br><span class="line">            self.min_stack.pop();</span><br><span class="line">	<span class="comment">#直接获取栈顶元素</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">top</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        top_stack = self.stack[-<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> top_stack</span><br><span class="line"></span><br><span class="line">	<span class="comment">#推最小栈的栈顶元素</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getMin</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">return</span> self.min_stack[-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>每日温度——单调栈：</strong></p>
+<p>给定一个整数数组 temperatures ，表示每天的温度，返回一个数组 answer ，其中 answer[i] 是指对于第 i 天，下一个更高温度出现在几天后。如果气温在这之后都不会升高，请在该位置用 0 来代替。如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: temperatures = [73,74,75,71,69,72,76,73]</span><br><span class="line">输出: [1,1,4,2,1,1,0,0]</span><br></pre></td></tr></table></figure>
+
+<p>代码思路如下：这里采用了单调栈的方式，我们设定一个栈，这个栈储存符合条件的气温的下标，这里的符合条件指的是：最高气温下标放下面，低的放上面，但如果又比栈内气温大的则需要全部将低于其的气温下标出栈，并返回该下标，当前气温日减去该下标的值就等于下一个更高温度的天数。最后返回这个对比表。</p>
+<p>简单来说，就是计算每一天还有多少天后会比现在更热然后存储成表格。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dailyTemperatures</span>(<span class="params">self, temperatures: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        stack = [];</span><br><span class="line">        length = <span class="built_in">len</span>(temperatures)</span><br><span class="line">        <span class="comment">#这里搞了length个0，即[0, 0, 0, ....]</span></span><br><span class="line">        new = [<span class="number">0</span>] * length</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(length):</span><br><span class="line">            temp = temperatures[x];</span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> temp &gt; temperatures[stack[-<span class="number">1</span>]]:</span><br><span class="line">                input_day = stack.pop()</span><br><span class="line">                new[input_day] = x - input_day;</span><br><span class="line">            stack.append(x)</span><br><span class="line">        <span class="keyword">return</span> new</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 20xx - 2022 Hexo
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @John Doe
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+    </body>
+</html>

@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Hexo</title>
+        <meta name="author" content="John Doe">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="icon" href="">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 6.2.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Hexo</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Hexo</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1> </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/8/22
+        </span>
+        
+        
+    </div>
+    <div class="content" v-pre>
+        <p><strong>用栈实现队列：</strong></p>
+<p>请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：</p>
+<p>实现 MyQueue 类：</p>
+<p>void push(int x) 将元素 x 推到队列的末尾<br>int pop() 从队列的开头移除并返回元素<br>int peek() 返回队列开头的元素<br>boolean empty() 如果队列为空，返回 true ；否则，返回 false</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyQueue</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">	<span class="comment">#初始化栈</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.stack1 = []</span><br><span class="line">        self.stack2 = []</span><br><span class="line">	<span class="comment">#代替队列的推入</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.stack1.append(x)</span><br><span class="line">	<span class="comment">#代替队列的弹出</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> self.stack2:</span><br><span class="line">            <span class="keyword">return</span> self.stack2.pop();</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(self.stack1)):</span><br><span class="line">                self.stack2.append(self.stack1.pop())</span><br><span class="line">            <span class="keyword">return</span> self.stack2.pop()</span><br><span class="line">	<span class="comment">#输出队列的第一个值</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">peek</span>(<span class="params">self</span>):</span><br><span class="line">        ans = self.pop()</span><br><span class="line">        self.stack2.append(ans)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">	<span class="comment">#检查是否为空队列</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">empty</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> self.stack1 <span class="keyword">and</span> <span class="keyword">not</span> self.stack2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这里的主要思想是借助辅助栈，当我们1栈弹出时，输入到2栈，此时最先进的数据会被放在2栈的顶端第一个输出，从而实现FIFO.</p>
+<p>而推入操作则直接往1栈入栈，弹出操作稍微比较麻烦点，主要是需要判断2栈是否为空，如果为空，则需要将1栈元素全数装进2栈，再弹出，如果非空，则直接弹出2栈顶部元素即可。</p>
+<p>获取第一个元素的操作比较复杂，这里主要套用了弹出的函数，并获取该弹出数值，最后将该元素塞回2栈。一个巧妙的思路。而检查非空的函数，只需要检查1栈和2栈是否为空即可。</p>
+<p><strong>循环队列：</strong></p>
+<p>循环队列的一个好处是我们可以利用这个队列之前用过的空间。在一个普通队列里，一旦一个队列满了，我们就不能插入下一个元素，即使在队列前面仍有空间。但是使用循环队列，我们能使用这些空间去存储新的值。</p>
+<p>你的实现应该支持如下操作：</p>
+<p>MyCircularQueue(k): 构造器，设置队列长度为 k 。<br>Front: 从队首获取元素。如果队列为空，返回 -1 。<br>Rear: 获取队尾元素。如果队列为空，返回 -1 。<br>enQueue(value): 向循环队列插入一个元素。如果成功插入则返回真。<br>deQueue(): 从循环队列中删除一个元素。如果成功删除则返回真。<br>isEmpty(): 检查循环队列是否为空。<br>isFull(): 检查循环队列是否已满。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyCircularQueue</span>:</span><br><span class="line">	<span class="comment">#队列特别的有两个指针，一个指向队头一个指向队尾，另外</span></span><br><span class="line">	<span class="comment">#由于队尾一直为空，所以我们需要k+1个空间</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, k: <span class="built_in">int</span></span>):</span><br><span class="line">        self.front = <span class="number">0</span>;</span><br><span class="line">        self.rear = <span class="number">0</span>;</span><br><span class="line">        self.element = [<span class="number">0</span>] * (k + <span class="number">1</span>)</span><br><span class="line">	<span class="comment">#入队</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">enQueue</span>(<span class="params">self, value: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> self.isFull(): <span class="keyword">return</span> <span class="literal">False</span>;</span><br><span class="line">        self.element[self.rear] = value</span><br><span class="line">        self.rear = (self.rear + <span class="number">1</span>) % <span class="built_in">len</span>(self.element)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">	<span class="comment">#出队</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">deQueue</span>(<span class="params">self</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> self.isEmpty(): <span class="keyword">return</span> <span class="literal">False</span>;</span><br><span class="line">        self.element[self.front] = <span class="number">0</span>;</span><br><span class="line">        self.front = (self.front + <span class="number">1</span>) % <span class="built_in">len</span>(self.element)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">	<span class="comment">#返回队头</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Front</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span> <span class="keyword">if</span> self.isEmpty() <span class="keyword">else</span> (self.element[self.front])</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#返回队尾元素</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Rear</span>(<span class="params">self</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span> <span class="keyword">if</span> self.isEmpty() <span class="keyword">else</span> self.element[(self.rear-<span class="number">1</span>)% <span class="built_in">len</span>(self.element)]</span><br><span class="line">	<span class="comment">#判空</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isEmpty</span>(<span class="params">self</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> self.rear == self.front:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">	<span class="comment">#判满</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isFull</span>(<span class="params">self</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> (self.rear+<span class="number">1</span>)%(<span class="built_in">len</span>(self.element)) == self.front</span><br></pre></td></tr></table></figure>
+
+<p>实现该类的方法主要采用了比较麻烦的函数，首先是队列需要定义两个指针，一个指向队头一个指向队尾，而队尾元素一般是空，即用来存放新元素的，此时需要K+1个空间，这里的K指的是队列元素个数。</p>
+<p>入队的话一般需要判断该队列是否为满，可以直接借用类内方法。另外如果队列未满，则需要将值输入rear元素所指位置，并rear指针向后移动一位。因为这里循环的原因，队列前面的空间也可以使用，所以为了不浪费空间，这里rear采用的是(self.rear + 1) % len(self.element)，这里能够有效地帮助我们返回前面未使用的空间。</p>
+<p>出队同样需要判断队列是否为空，同样借用类内方法，另外，与入队类似需要将推出的数值置零，并将队头指针向后移动一位，即采用(self.front + 1) % len(self.element).</p>
+<p>返回队头队尾元素，则需要判空，否则执行对应的操作即可，返回队头元素不需要考虑循环，但是返回队尾元素需要。</p>
+<p>判空的要求即是队头指针与队尾指针相同，而判满则是队尾的下一个元素就是队头。</p>
+
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 20xx - 2022 Hexo
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @John Doe
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+    </body>
+</html>
