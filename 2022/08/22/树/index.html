@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>Stupid | Hexo</title>
+        <title>Hexo</title>
         <meta name="author" content="John Doe">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -122,20 +122,57 @@
                         
 <div class="article">
     <div>
-        <h1>Stupid </h1>
+        <h1> </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
             </span>
-            2022/8/9
+            2022/8/22
         </span>
         
         
     </div>
     <div class="content" v-pre>
-        <p>你妈死了</p>
+        <p><strong>二叉树的前序遍历：</strong></p>
+<p>树与递归之间的关系不可忽视：</p>
+<p>而递归之间需要知道三个关系：</p>
+<p>1、整个递归之间的终止条件？</p>
+<p>2、一级递归需要做什么？</p>
+<p>3、应该返回给上一级的返回值是什么？</p>
+<p>以前序遍历为例子回答这三个问题：</p>
+<p>1、遍历结束，即root &#x3D; None</p>
+<p>2、返回根节点的值</p>
+<p>3、返回的是节点的值，但这里的节点应该是设置为全局变量，否则一直刷新成功不了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def preorderTraversal(self, root: Optional[TreeNode]) -&gt; List[int]:</span><br><span class="line">        def preorder(root: Optional[TreeNode]):</span><br><span class="line">            if not root:</span><br><span class="line">                return </span><br><span class="line">            res.append(root.val)</span><br><span class="line">            preorder(root.left)</span><br><span class="line">            preorder(root.right)</span><br><span class="line">        res = list()</span><br><span class="line">        preorder(root);</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+
+<p><strong>中序遍历和后序遍历：</strong></p>
+<p>类似的也如中序遍历和后序遍历：</p>
+<pre><code>def preorderTraversal(self, root: Optional[TreeNode]) -&gt; List[int]:
+    def preorder(root: Optional[TreeNode]):
+        if not root:
+            return 
+        #中序遍历
+        preorder(root.left)
+        res.append(root.val)
+        preorder(root.right)
+    res = list()
+    preorder(root);
+    return res
+</code></pre>
+<p><strong>求二叉树的最大深度：</strong></p>
+<p>给定一个二叉树，找出其最大深度。</p>
+<p>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</p>
+<p>以前序遍历为例子回答这三个问题：</p>
+<p>1、遍历结束，即root &#x3D; None</p>
+<p>2、进行左遍历，进行右遍历，得到最大深度</p>
+<p>3、返回的最大深度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def maxDepth(self, root: Optional[TreeNode]) -&gt; int:</span><br><span class="line">        #遍历结束条件</span><br><span class="line">        if root ==  None:</span><br><span class="line">            return 0</span><br><span class="line">        #左遍历、右遍历</span><br><span class="line">        else:</span><br><span class="line">            leftdeep = self.maxDepth(root.left)</span><br><span class="line">            rightdeep = self.maxDepth(root.right)</span><br><span class="line">            #返回最大值</span><br><span class="line">            return max(leftdeep, rightdeep)+1</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>求二叉树的最小深度：</strong></p>
 
     </div>
     
